@@ -1,36 +1,19 @@
-"""
-اختبارات الجودة والتحقق التلقائي للمنتج الرقمي PromptForge Pro
-"""
-import sys
-from promptforge import PromptForge
-from license_manager import LicenseManager
+import os
+import json
+import unittest
 
-def test_suite():
-    print("=" * 60)
-    print("🧪 بدء تشغيل اختبارات جودة المنتج البرمجي...")
-    print("=" * 60)
+class TestProduct(unittest.TestCase):
+    def test_get_license_info(self):
+        user_id = '12345'
+        license_info = get_license_info(user_id)
+        self.assertEqual(json.loads(license_info)['user_id'], user_id)
+        self.assertEqual(json.loads(license_info)['status'], 'active')
+        self.assertEqual(json.loads(license_info)['expiry_date'], '2023-12-31')
 
-    # 1. فحص محرك الأوامر
-    forge = PromptForge()
-    res = forge.optimize_prompt("Sort data by date")
-    assert res["status"] == "success", "فشل تحسين الأمر"
-    assert "### Role & Objective:" in res["optimized_prompt"], "فشل تضمين الهيكل"
-    print("✅ 1. اختبار تحسين الأوامر (PromptForge.optimize_prompt): ناجح بنسبة 100%")
+    def test_update_license_status(self):
+        user_id = '12345'
+        update_license_status(user_id, 'expired')
+        self.assertEqual(get_license_info(user_id)['status'], 'expired')
 
-    # 2. فحص حاسبة التكلفة
-    cost = forge.estimate_cost(5000)
-    assert cost > 0, "فشل حساب التكلفة"
-    print(f"✅ 2. اختبار حاسبة الرموز (PromptForge.estimate_cost): ناجح (التكلفة: ${cost})")
-
-    # 3. فحص نظام التراخيص
-    lm = LicenseManager()
-    key = lm.generate_license_key("client@domain.com", "PRO")
-    assert lm.verify_license(key) is True, "فشل التحقق من الترخيص"
-    print(f"✅ 3. اختبار توليد التراخيص (LicenseManager.verify_license): ناجح (المفتاح: {key})")
-
-    print("=" * 60)
-    print("🎉 جميع الاختبارات اجتازت بنجاح والمنتج جاهز للنشر والبيع كلياً!")
-    print("=" * 60)
-
-if __name__ == "__main__":
-    test_suite()
+if __name__ == '__main__':
+    unittest.main()
