@@ -1,2 +1,3 @@
-# ai-digital-product
-Autonomous Agent Digital Product with PayPal Integration
+# AI Digital Product
+
+Autonomous AI Agent Product with PayPal Integration.
