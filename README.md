@@ -1,19 +1,29 @@
-# PromptForge Pro ⚡
+# Sellable Digital Product
 
-> حزمة برمجية متطورة لهندسة الأوامر وإدارة تراخيص المنتجات الرقمية، مبنية بلغة بايثون 100%.
+## Overview
+This project is a digital product that offers a range of features and benefits.
 
-## 🚀 المميزات الرئيسية
-- **محسن الأوامر الذكي**: تحويل الأوامر البسيطة إلى أوامر احترافية تقلل الهلوسة.
-- **حاسبة التكلفة والرموز**: تقدير الاستهلاك للنماذج الذكية.
-- **إدارة التراخيص المشفرة**: نظام حماية وتوليد مفاتيح رقمية للعملاء.
-- **صفحة هبوط جاهزة**: واجهة ويب متكاملة بـ HTML5 وتنسيقات عصرية مع زر دفع PayPal Sandbox.
+## Features
+- Feature 1
+- Feature 2
+- Feature 3
 
-## 💻 التشغيل السريع
-```bash
-python promptforge.py
-python test_product.py
-```
+## Benefits
+- Benefit 1
+- Benefit 2
+- Benefit 3
 
-## 💳 نظام الدفع والترخيص
-- تم ربط صفحة البيع `index.html` بزر دفع PayPal Sandbox رسمي.
-- عند اكتمال الدفع، يستلم العميل مفتاح الترخيص فوريًا مع زر تحميل الكود.
+## Installation
+1. Clone the repository
+2. Install dependencies
+3. Run tests
+
+## Usage
+1. Generate a prompt using the `generate_prompt` function
+2. Use the generated prompt to interact with the product
+
+## License
+MIT License
+
+## Contact
+For more information, contact us at [contact@example.com](mailto:contact@example.com).
